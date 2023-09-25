@@ -1,5 +1,5 @@
 import { Button } from "./button";
-
+import { HomeIcon } from "../imgComponents/homeIcon";
 
 export function Nav() {
     return(
@@ -9,7 +9,7 @@ export function Nav() {
                 <h1>Pipper</h1>
             </div>
             <ul className="nav-bar">
-                <a href="#"> <img src="images/home.svg" alt="home"></img> Forside</a>
+                <a href="#"> <HomeIcon color={'black'}/> Forside</a>
                 <a href="#"><img src="images/search.svg" alt="home"></img>Udforsk</a>
                 <a href="#"><img src="images/bell.svg" alt="home"></img>Meddelelser </a>
                 <a href="#"><img src="images/mail.svg" alt="home"></img>Beskeder</a>
