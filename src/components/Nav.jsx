@@ -19,8 +19,6 @@ export function Nav() {
                 <a href="#"><img src="images/more-horizontal.svg" alt="home"></img>Mere</a>
             </ul>
                {/* start pip window */}
-
-    <Button></Button>
         </div>
     )
 }
