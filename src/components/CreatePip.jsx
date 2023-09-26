@@ -6,7 +6,7 @@ import { Pip } from "../entities/pip";
 export function CreatePip(){
     const [content, setContent] = useState('');
 
-    // indsætter data
+    // laver et object der indeholder en masse data ift. text og farve på pip post
     const pipDummyData= [ 
         new Pip('Håber det her virker', new Date(), 1),
         
