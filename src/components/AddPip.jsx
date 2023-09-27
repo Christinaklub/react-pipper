@@ -1,11 +1,7 @@
-import React from "react";
-import { Button } from "./button";
+import React from 'react'
 
-export default function Add() {
+export default function AddPip() {
   return (
-    <div className="add-container">
-      <input type="text" />
-      <Button/>
-    </div>
-  );
+    <div>AddPip</div>
+  )
 }

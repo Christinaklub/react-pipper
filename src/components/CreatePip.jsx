@@ -1,10 +1,12 @@
 import react, { useState } from "react";
 import PipItem from "./PipItem";
 import { Pip } from "../entities/pip";
+import ReactModal from "react-modal";
 
 
 export function CreatePip(){
     const [content, setContent] = useState('');
+    const [isOpen, setIsOpen] = useState (false);
 
     // laver et object der indeholder en masse data ift. text og farve på pip post
     const pipDummyData= [ 
@@ -41,16 +43,31 @@ export function CreatePip(){
         // kalder setTodos med det nye todos array som parameter.
         // google js-spread operator
         setPips([...pips, newPip]) 
+
+        handleCloseModal()
+      }
+
+      function handleOpenModal(){
+        setIsOpen(true)
+      }
+      function handleCloseModal(){
+        setIsOpen(false)
       }
 
 
       return(
         <main>
+
         <div className="list">
           <div className="add-container">
+          <ReactModal isOpen={isOpen}> 
+                <input className="pipInput" type="text" placeholder="What's on your mind?" value={content} onChange={handlePipContentChange}/>
+                <button className="add-button" onClick={handleCloseModal}>Close</button>
+                <button className="add-button" onClick={handleAddPipClick}>Pip</button>
+            </ReactModal>
+
             <h2 className="home">Home</h2>
-            <input className="pipInput" type="text" placeholder="What's on your mind?" value={content} onChange={handlePipContentChange}/>
-            <button className="add-button" onClick={handleAddPipClick}>Pip</button>
+            <button className="add-button" onClick={handleOpenModal}>Pip</button>
           </div>
           {/* Vi sender data ind i todoItem via Props og kalder den content */}
           {pips.map(pip => {
