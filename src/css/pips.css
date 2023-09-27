@@ -36,6 +36,7 @@
     display: flex;
     flex-direction: row;
     width: 80%;
+    margin-left: 5px;
 }
 
 .nav-bar{
@@ -50,6 +51,19 @@
     padding-right: 10px;
 }
 
+.icon-nav{
+    margin-right: 10px;
+}
+
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.main-logo{
+    margin-right: 15px;
+}
 
 .pip-btn{
     background-color: #26a7de;

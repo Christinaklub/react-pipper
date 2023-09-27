@@ -1,22 +1,21 @@
 import { Button } from "./button";
-import { HomeIcon } from "../imgComponents/homeIcon";
+import { BadgeCheck, Home, List, MessageCircle, MoreHorizontal, Search, Twitter, User } from "lucide-react";
 
 export function Nav() {
     return(
         <div className="nav">
             <div className="logo" >
-                <img className="logo-img" src="img/twitter.svg" alt="pip-logo"></img>
+                <Twitter className="main-logo" size={40}/>
                 <h1>Pipper</h1>
             </div>
             <ul className="nav-bar">
-                <a href="#"> <HomeIcon color={'black'}/> Forside</a>
-                <a href="#"><img src="images/search.svg" alt="home"></img>Udforsk</a>
-                <a href="#"><img src="images/bell.svg" alt="home"></img>Meddelelser </a>
-                <a href="#"><img src="images/mail.svg" alt="home"></img>Beskeder</a>
-                <a href="#"><img src="images/file-text.svg" alt="home"></img>Lister</a>
-                <a href="#"><img src="images/x.svg" alt="home"></img>Verificeret</a>
-                <a href="#"><img src="images/user.svg" alt="home"></img>Profil</a>
-                <a href="#"><img src="images/more-horizontal.svg" alt="home"></img>Mere</a>
+                <a href="#"><Home className="icon-nav"/> Forside</a>
+                <a href="#"><Search className="icon-nav"/> Udforsk</a>
+                <a href="#"><MessageCircle className="icon-nav"/> Meddelelser </a>
+                <a href="#"><List className="icon-nav" /> Lister</a>
+                <a href="#"><BadgeCheck className="icon-nav" /> Verificeret</a>
+                <a href="#"><User className="icon-nav" /> Profil</a>
+                <a href="#"><MoreHorizontal className="icon-nav" /> Mere</a>
             </ul>
                {/* start pip window */}
         </div>
