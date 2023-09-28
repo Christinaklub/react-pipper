@@ -12,18 +12,18 @@ export function CreatePip(){
     const pipDummyData= [ 
         new Pip('Håber det her virker', new Date(), 1),
         
-        {
-            content: 'Hvis det ikke virker bliver jeg meget ked af det',
-            isCompleted: true, 
-            created: new Date(),
-            priority: 1,
-        },
-        {
-            content: 'Jeg er sku lidt træt',
-            isCompleted: true, 
-            created: new Date(),
-            priority: 2, 
-        }
+        // {
+        //     content: 'Hvis det ikke virker bliver jeg meget ked af det',
+        //     isCompleted: true, 
+        //     created: new Date(),
+        //     priority: 1,
+        // },
+        // {
+        //     content: 'Jeg er sku lidt træt',
+        //     isCompleted: true, 
+        //     created: new Date(),
+        //     priority: 2, 
+        // }
     ];
 
 
@@ -45,7 +45,10 @@ export function CreatePip(){
         // google js-spread operator
         setPips([...pips, newPip]) 
 
+        // Lukker modalet når man indputter data
         handleCloseModal()
+        // setContent('') gør at når man tilføjer og lukker modalet så clear den input feltet
+        setContent('')
       }
 
       function handleOpenModal(){
