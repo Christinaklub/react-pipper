@@ -26,6 +26,7 @@ export function CreatePip(){
         }
     ];
 
+
     const [pips, setPips] = useState(pipDummyData);
 
     const handlePipContentChange = (e) => {
@@ -60,7 +61,7 @@ export function CreatePip(){
 
         <div className="list">
           <div className="add-container">
-          <ReactModal isOpen={isOpen}> 
+            <ReactModal isOpen={isOpen}> 
                 <input className="pipInput" type="text" placeholder="What's on your mind?" value={content} onChange={handlePipContentChange}/>
                 <button className="add-button" onClick={handleCloseModal}>Close</button>
                 <button className="add-button" onClick={handleAddPipClick}>Pip</button>
@@ -70,7 +71,8 @@ export function CreatePip(){
             <button className="add-button" onClick={handleOpenModal}>Pip</button>
           </div>
           {/* Vi sender data ind i todoItem via Props og kalder den content */}
-          {pips.map(pip => {
+          {/* slice() bruges til at lave en overfladsik kopi af dit array af objects og når man kombinere det med reverse() tager den kopien man lavede med slice() og reverser rækkefølgen. */}
+          {pips.slice().reverse().map(pip => {
             // key={todo.content} burde være et unikt id
             return <PipItem key={pip.content} pipItem={pip}/>
           })}
