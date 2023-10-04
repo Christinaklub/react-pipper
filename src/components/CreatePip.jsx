@@ -3,8 +3,9 @@ import PipItem from "./PipItem";
 import { Pip } from "../entities/pip";
 import ReactModal from "react-modal";
 
-
+// Laver funktionen der laver et nyt pip
 export function CreatePip(){
+  // Bruger useState til Content & modal da deres tilstand skal kunne ændre alt afhængigt af brugerens actions.
     const [content, setContent] = useState('');
     const [isOpen, setIsOpen] = useState (false);
 
@@ -26,22 +27,24 @@ export function CreatePip(){
         // }
     ];
 
-
+    // Sætter pipdataten i en useState så dataen kan ændres på baggrund af brugerens handlinger. 
     const [pips, setPips] = useState(pipDummyData);
 
+
+    // vi sætter den til at tracke det vi skriver såm den ved hvad den skal poste
     const handlePipContentChange = (e) => {
         setContent(e.target.value)
     }
 
     const handleAddPipClick = () => {
-        // Opretter nyt todo objekt for at tilføje det til array'et af todos.
+        // Opretter nyt pip objekt for at tilføje det til array'et af todos.
         // Hardcoded "dummy" deadline 2024-01-01, priority 1, labels []
         const newPip = new Pip(content, new Date(), 1)
     
-        // kalde setTodos og sende det tidligere todos array + mit nye todo obj. ind.
+        // kalde setPips og sende det tidligere todos array + mit nye todo obj. ind.
         
         // oprette et nyt array, indsætte todos objekter, tilføjer den den nye todo
-        // kalder setTodos med det nye todos array som parameter.
+        // kalder setPips med det nye todos array som parameter.
         // google js-spread operator
         setPips([...pips, newPip]) 
 
@@ -73,10 +76,10 @@ export function CreatePip(){
             <h2 className="home">Home</h2>
             <button className="add-button" onClick={handleOpenModal}>Pip</button>
           </div>
-          {/* Vi sender data ind i todoItem via Props og kalder den content */}
+          {/* Vi sender data ind i pipItem via Props og kalder den content */}
           {/* slice() bruges til at lave en overfladsik kopi af dit array af objects og når man kombinere det med reverse() tager den kopien man lavede med slice() og reverser rækkefølgen. */}
           {pips.slice().reverse().map(pip => {
-            // key={todo.content} burde være et unikt id
+            // key={pip.content} burde være et unikt id
             return <PipItem key={pip.content} pipItem={pip}/>
           })}
         </div>
